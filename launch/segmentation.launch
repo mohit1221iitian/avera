@@ -1,0 +1,9 @@
+<launch>
+  <!-- Image publisher node, publishing your road image -->
+  <node pkg="image_publisher" type="image_publisher" name="image_publisher" output="screen" args="/mnt/d/avera/outputs/road.jpg" />
+
+  <!-- Segmentation node -->
+  <node pkg="segmentation_node" type="segmentation_node.py" name="segmentation_node" output="screen">
+    <param name="model_path" value="/home/mohit_iitian1/my_ws/src/segmentation_node/models/best_model.h5" />
+  </node>
+</launch>
